@@ -23,6 +23,11 @@ services:
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
 
+    App\Serializer\MyMessageSerializer:
+        tags:
+            - { name: messenger.transport.serializer }
+
+
     App\Controller\SomeController:
         public: true
         autowire: true

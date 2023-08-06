@@ -2,11 +2,9 @@
 
 namespace App\Message;
 
-use Serializable;
-
-class MyMessage implements Serializable
+class UserCreated
 {
-    private $data;
+    private array $data;
 
     public function __construct(array $data)
     {
@@ -16,16 +14,6 @@ class MyMessage implements Serializable
     public function getData(): array
     {
         return $this->data;
-    }
-
-    public function serialize(): ?string
-    {
-        return serialize($this->data);
-    }
-
-    public function unserialize(string $data): void
-    {
-        $this->data = unserialize($data);
     }
 
     public function __serialize(): array

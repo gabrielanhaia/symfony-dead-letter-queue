@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Message\MyMessage;
+use App\Message\UserCreated;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Routing\Annotation\Route;
@@ -19,8 +19,12 @@ class SomeController
     #[Route('/test', name: 'test')]
     public function sendMessage(): Response
     {
-        $messageData = ['foo' => 'bar']; // Replace this with your message data
-        $message = new MyMessage($messageData);
+        $messageData = [
+            'uuid' => '123e4567-e89b-12d3-a456-426614174000',
+            'name' => 'John Doe',
+            'email' => 'john.doe@test.com',
+        ];
+        $message = new UserCreated($messageData);
         $this->messageBus->dispatch($message);
 
         return new Response('Message sent!');
