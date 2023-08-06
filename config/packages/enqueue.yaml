@@ -1,0 +1,6 @@
+# config/packages/enqueue.yaml
+
+enqueue:
+    default:
+        transport: '%env(MESSENGER_TRANSPORT_DSN)%'
+        client: ~
