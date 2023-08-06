@@ -3,15 +3,15 @@
 namespace App\Handler;
 
 use App\Message\UserCreated;
+use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 use Symfony\Component\Messenger\Exception\UnrecoverableMessageHandlingException;
-use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
 
-class MyMessageHandler implements MessageHandlerInterface
+#[AsMessageHandler]
+class MyMessageHandler
 {
-    public function __invoke(UserCreated $message)
+    public function __invoke(UserCreated $message): void
     {
         echo "Message received!\n\n";
-//        dump($message->getData());
         throw new UnrecoverableMessageHandlingException('This message should not be retried');
     }
 }
