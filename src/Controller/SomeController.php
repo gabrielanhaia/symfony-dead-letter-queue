@@ -2,14 +2,14 @@
 
 namespace App\Controller;
 
-use App\MyMessage; // Fix the namespace here
+use App\Message\MyMessage;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class SomeController
 {
-    private $messageBus;
+    private MessageBusInterface $messageBus;
 
     public function __construct(MessageBusInterface $messageBus)
     {
