@@ -110,4 +110,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 This repository serves as an example for implementing the Dead Letter Queue pattern in Symfony and PHP 8.2. It demonstrates the usage of Docker, RabbitMQ, and Symfony to handle failed messages and store them in the database. Please refer to the specific files in the repository for detailed implementations and configurations.
 
-If you have any questions or need further assistance, feel free to reach out. Happy coding!
+Feel free to reach out if you have any questions or need further assistance. Happy coding!
